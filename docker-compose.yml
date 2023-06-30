@@ -6,7 +6,7 @@ services:
     - type: bind
       source: ./
       target: /var/app
-    command: gcc -o /var/app/superheroes /var/app/src/main.c
+    command: gcc -o /var/app/superheroes /var/app/src/main.c -lcurl
 
   run:
     image: gcc:9.5.0
@@ -16,7 +16,7 @@ services:
     - type: bind
       source: ./
       target: /var/app
-    command: /var/app/superheroes
+    command: ./var/app/superheroes Batman Joker 
 
 
 volumes:
