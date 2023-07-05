@@ -18,6 +18,13 @@ services:
       target: /var/app
     command: ./var/app/superheroes Batman Joker 
 
+  test:
+    image: gcc:9.5.0
+    volumes: 
+    - type: bind
+      source: ./
+      target: /var/app
+    command: apt-get install libcunit1 libcunit1-doc libcunit1-dev && gcc -o /var/app/superheroes_test /var/app/src/test.c -lcunit 
 
 volumes:
   src:
